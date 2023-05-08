@@ -11,7 +11,8 @@ export const Order = () => {
         const getOrders = async () => {
             
             // console.log(process.env.API_URL);
-            const apiOrders = await axios.get("http://127.0.0.1:8000/api/orders");            
+            //const apiOrders = await axios.get("http://127.0.0.1:8000/api/orders"); //API LOCAL         
+            const apiOrders = await axios.get("https://admin.industrialmaquiladora.com/api/orders"); //API WEB      
             setOrders(apiOrders.data.orders);
             
         };
@@ -22,7 +23,8 @@ export const Order = () => {
     useEffect(() =>{
         const getOrdersComplete = async () => {
             
-            const apiOrdersComplete = await axios.get("http://127.0.0.1:8000/api/get-orders-complete");
+            //const apiOrdersComplete = await axios.get("http://127.0.0.1:8000/api/get-orders-complete"); //API LOCAL
+            const apiOrdersComplete = await axios.get("https://admin.industrialmaquiladora.com/api/get-orders-complete"); //API WEB
             setComplete(apiOrdersComplete.data.orderscomplete);
         };
         getOrdersComplete();
@@ -37,7 +39,8 @@ export const Order = () => {
       }, []);
   
     const fetchData = () => {
-        fetch('http://127.0.0.1:8000/api/orders')
+        //fetch('http://127.0.0.1:8000/api/orders') //API LOCAL
+        fetch('https://admin.industrialmaquiladora.com/api/orders') //API WEB
           .then(response => response.json())
           .then(data => setOrders(data.orders))
         //   .catch(error => console.error(error));
@@ -53,7 +56,8 @@ export const Order = () => {
       }, []);
     
     const fetchDataComplete = () => {
-        fetch('http://127.0.0.1:8000/api/get-orders-complete')
+        //fetch('http://127.0.0.1:8000/api/get-orders-complete') //API LOCAL
+        fetch('https://admin.industrialmaquiladora.com/api/get-orders-complete') // API WEB
           .then(response => response.json())
           .then(data => setComplete(data.orderscomplete))
         //   .catch(error => console.error(error));
