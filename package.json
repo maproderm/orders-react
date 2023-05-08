@@ -1,7 +1,7 @@
 {
   "name": "orders-react",
   "version": "0.1.0",
-  "homepage": "http://orders.industrialmaquiladora.com",
+  "homepage": "https://orders.industrialmaquiladora.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
